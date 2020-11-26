@@ -3,6 +3,6 @@
         "init": "Form Bot Start : "
     },
     "error":{
-        "catch": "Issue Decteted, Please contact the devs"
+        "catch": "Issue Detected, Please contact the devs"
     }
 }

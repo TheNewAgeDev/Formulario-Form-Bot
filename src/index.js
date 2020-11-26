@@ -10,7 +10,7 @@ const login = Util.getLogin()[1];
 const config = Util.getConfig()[1];
 
 var leng;
-if(config.lenguage=="ES"){
+if(config.language=="ES"){
     leng = require("./data/languages/ES-es.json");
 }else{
     leng = require("./data/languages/EN-en.json");
@@ -37,7 +37,13 @@ client.on('message', msg => {
     if (msg.author.bot) return
     if (msg.content.startsWith(PREFIX)) {
         const args = msg.content.slice(PREFIX.length).trim().split(/ +/);
-        const CMD = args.shift().toLowerCase();
+        let CMD = args.shift().toLowerCase();
+
+        /* Alias Commands */
+        if(client.commands.find((c) => c.alias.includes(CMD))){
+            let com = client.commands.find((c) => c.alias.includes(CMD));
+            CMD = com.name;
+        }
 
         /* List Commands */
         if(!client.commands.has(CMD)) return;
@@ -50,5 +56,5 @@ client.on('message', msg => {
     }
 });
 
-/* Logguer with Discord Bot */
+/* Logger with Discord Bot */
 client.login(login.password);
