@@ -1,0 +1,8 @@
+{
+    "start":{
+        "init": "Form Bot Start : "
+    },
+    "error":{
+        "catch": "Issue Decteted, Please contact the devs"
+    }
+}
