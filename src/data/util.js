@@ -7,4 +7,17 @@ module.exports ={
         let config = "./config.js";
         return [config, require(config)];
     },
+    sendMsg: function(client, msg){
+        client.channel.send(msg);
+    },
+    checkArgs: function(args){
+        if(args[0] != undefined){
+            return false;
+        }else{
+            return true;
+        }
+    },
+    countArgs: function(args){
+        return args.length;
+    }
 }

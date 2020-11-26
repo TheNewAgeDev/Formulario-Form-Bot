@@ -46,7 +46,11 @@ client.on('message', msg => {
         }
 
         /* List Commands */
-        if(!client.commands.has(CMD)) return;
+        if(!client.commands.has(CMD)){
+            msg.channel.send(leng.error.notCommand);
+            return;
+        };
+
         try{
             client.commands.get(CMD).execute(client, msg, args);
         }catch(e){

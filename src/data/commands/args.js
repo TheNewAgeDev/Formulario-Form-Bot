@@ -1,8 +1,14 @@
+const util = require("../util");
+
 module.exports = {
-    name: "write",
-    alias: ["w", "wr"],
+    name: "args",
+    alias: ["a", "ar"],
     description: "Write the Args",
     execute: (client, msg, args) => {
-        msg.channel.send(args);
+        if(util.checkArgs(args)){
+            msg.channel.send("Not Args");
+        }else{
+            msg.channel.send("arguments: "+util.countArgs(args));
+        }
     },
 };

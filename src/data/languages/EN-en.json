@@ -3,6 +3,7 @@
         "init": "Form Bot Start : "
     },
     "error":{
-        "catch": "Issue Detected, Please contact the devs"
+        "catch": "Issue Detected, Please contact the devs",
+        "notCommand": "The command does not exist"
     }
 }

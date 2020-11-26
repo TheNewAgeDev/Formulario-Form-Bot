@@ -3,5 +3,5 @@ module.exports = {
     status: "dnd",
     statusBot: "Form Bot Dev",
     devs: ["LuisFOsG","BryanSMC"],
-    language: "ES",
+    language: "EN",
 }
