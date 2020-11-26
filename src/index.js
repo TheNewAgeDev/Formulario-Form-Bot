@@ -9,11 +9,11 @@ const Util = require("./data/util");
 const login = Util.getLogin()[1];
 const config = Util.getConfig()[1];
 
-var leng;
+var lang;
 if(config.language=="ES"){
-    leng = require("./data/languages/ES-es.json");
+    lang = require("./data/languages/ES-es.json");
 }else{
-    leng = require("./data/languages/EN-en.json");
+    lang = require("./data/languages/EN-en.json");
 }
 
 /* To Init Bot */
@@ -25,7 +25,7 @@ for(var file of commandFiles){
 }
 
 client.on("ready", () => {
-    console.log(leng.start.init + client.user.tag + "!");
+    console.log(lang.start.init + client.user.tag + "!");
     client.user.setStatus(config.status);
     client.user.setActivity(config.statusBot);
 });
@@ -47,7 +47,7 @@ client.on('message', msg => {
 
         /* List Commands */
         if(!client.commands.has(CMD)){
-            msg.channel.send(leng.error.notCommand);
+            msg.channel.send(lang.error.notCommand);
             return;
         };
 
@@ -55,7 +55,7 @@ client.on('message', msg => {
             client.commands.get(CMD).execute(client, msg, args);
         }catch(e){
             console.error(e);
-            msg.reply(leng.error.catch);
+            msg.reply(lang.error.catch);
         }
     }
 });

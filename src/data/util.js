@@ -19,5 +19,13 @@ module.exports ={
     },
     countArgs: function(args){
         return args.length;
+    },
+    watchPerms: async function(msg){
+        let perms = await msg.member.permissions;
+        if(perms.has("ADMINISTRATOR")){
+            msg.channel.send(msg.member.user.username + " is Administrator");
+        }else{
+            msg.channel.send(msg.member.user.username + " not is Administrator");
+        }
     }
 }

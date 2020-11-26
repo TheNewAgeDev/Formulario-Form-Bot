@@ -1,8 +1,10 @@
+const util = require("../util");
+
 module.exports = {
     name: "ping",
     alias: ["p"],
     description: "Command Ping Dev",
     execute: (client, msg, args) => {
-        msg.channel.send("Pong!");
+        util.sendMsg(msg, "Pong!");
     },
 };
