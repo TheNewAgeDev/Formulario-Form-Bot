@@ -5,7 +5,6 @@ module.exports = {
     alias: ["h"],
     description: "Write the Args",
     execute: (client, msg, args) => {
-        util.watchPerms(msg);
-        util.sendMsg(msg, "Watching Perms");
+        util.sendMsg(msg, "In the Future");
     },
 };

@@ -11,7 +11,7 @@ module.exports ={
         client.channel.send(msg);
     },
     checkArgs: function(args){
-        if(args[0] != undefined){
+        if(args[0] === undefined){
             return false;
         }else{
             return true;
@@ -20,12 +20,20 @@ module.exports ={
     countArgs: function(args){
         return args.length;
     },
-    watchPerms: async function(msg){
+    isAdmin: async function(msg){
         let perms = await msg.member.permissions;
         if(perms.has("ADMINISTRATOR")){
-            msg.channel.send(msg.member.user.username + " is Administrator");
+            return true;
         }else{
-            msg.channel.send(msg.member.user.username + " not is Administrator");
+            return false;
+        }
+    },
+    isManage: async function(msg){
+        let perms = await msg.member.permissions;
+        if(perms.has("MANAGE_SERVER")){
+            return true;
+        }else{
+            return false;
         }
     }
 }
