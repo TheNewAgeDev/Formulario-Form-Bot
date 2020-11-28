@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const fs = require("fs");
 const path = require("path");
+const util = require("./data/util");
 
 /* Import Configurations */
 const Util = require("./data/util");
@@ -35,6 +36,11 @@ const PREFIX = config.prefix;
 /* Events Bot */
 client.on('message', msg => {
     if (msg.author.bot) return
+
+    if(msg.content.startsWith("<@!"+client.user.id+">")){
+        util.sendMsg(msg, "Hi, The Prefix is '"+PREFIX+"', use: "+PREFIX+"h");
+    }
+
     if (msg.content.startsWith(PREFIX)) {
         const args = msg.content.slice(PREFIX.length).trim().split(/ +/);
         let CMD = args.shift().toLowerCase();

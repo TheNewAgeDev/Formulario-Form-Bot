@@ -3,8 +3,9 @@ const util = require("../util");
 module.exports = {
     name: "help",
     alias: ["h"],
-    description: "Write the Args",
+    description: "Pruebas",
     execute: (client, msg, args) => {
-        util.sendMsg(msg, "In the Future");
+        util.sendMsg(msg, "<@"+client.user.id+">");
+        util.sendMsg(msg, "Aun No tenemos ayudas xD");
     },
 };
