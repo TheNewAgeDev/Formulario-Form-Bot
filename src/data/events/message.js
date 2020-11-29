@@ -34,6 +34,7 @@ module.exports = async (client, msg) => {
             return;
         };
 
+        /* Eject Command */
         try{
             client.commands.get(CMD).execute(client, msg, args);
         }catch(e){
