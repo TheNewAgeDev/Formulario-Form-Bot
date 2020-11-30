@@ -12,7 +12,9 @@ if(config.language=="ES"){
 const PREFIX = config.prefix;
 
 module.exports = async (client, msg) => {
-    if (msg.author.bot) return
+    if (msg.author.bot) return;
+
+    console.log(msg.guild);
 
     if(msg.content.startsWith("<@!"+client.user.id+">")){
         Util.sendMsg(msg, "Hi, The Prefix is '"+PREFIX+"', use: "+PREFIX+"h");
